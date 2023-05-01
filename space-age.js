@@ -13,7 +13,7 @@ function calculateAgeOnPlanets(ageInSeconds) {
 
     let ages = {};
 
-    for(let planet in orbitalPeriods) {
+    for (let planet in orbitalPeriods) {
         let earthYears = ageInSeconds / SECONDS_IN_YEAR;
         let planetYears = earthYears / orbitalPeriods[planet];
         ages[planet] = Number(planetYears.toFixed(2));
@@ -22,4 +22,7 @@ function calculateAgeOnPlanets(ageInSeconds) {
     return ages;
 }
 
-console.log(calculateAgeOnPlanets(1000000000));
+// Example usage
+let ageInSeconds = 1000000000;
+let agesOnPlanets = calculateAgeOnPlanets(ageInSeconds);
+console.log(agesOnPlanets);
