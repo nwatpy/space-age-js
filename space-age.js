@@ -22,7 +22,16 @@ function calculateAgeOnPlanets(ageInSeconds) {
     return ages;
 }
 
-// Example usage
-let ageInSeconds = 1000000000;
-let agesOnPlanets = calculateAgeOnPlanets(ageInSeconds);
-console.log(agesOnPlanets);
+function displayAgeOnPlanets() {
+    let ageInSeconds = 1000000000; // Adjust this value as needed
+    let agesOnPlanets = calculateAgeOnPlanets(ageInSeconds);
+
+    let resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = ''; // Clear previous results
+
+    for (let planet in agesOnPlanets) {
+        let p = document.createElement('p');
+        p.textContent = `Age on ${planet}: ${agesOnPlanets[planet]} years`;
+        resultDiv.appendChild(p);
+    }
+}
